@@ -1,4 +1,5 @@
 import * as fs from "node:fs";
+import * as path from "node:path";
 import * as readline from "node:readline";
 import { Interpreter } from "./interpreter";
 import { Lexer } from "./lexer";
@@ -70,6 +71,10 @@ async function repl() {
 function main() {
   const file = process.argv[2];
   if (file) {
+    if (!file.toLowerCase().endsWith(".bll")) {
+      console.error(`Only .bll files can be run. Provided: ${file}`);
+      process.exit(1);
+    }
     const src = fs.readFileSync(file, "utf8");
     try {
       run(src);
