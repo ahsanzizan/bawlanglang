@@ -4,3 +4,6 @@ keluar "Anjay mabar cuk cuk!";
 keluar x;
 
 if (x == 22) { keluar "true bos"; }
+
+let i = 0;
+selama (i < 3) { keluar i; i = i + 1; }

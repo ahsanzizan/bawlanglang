@@ -47,7 +47,7 @@ const keywords: Record<string, TokenType> = {
   nil: TokenType.NIL,
   if: TokenType.IF,
   else: TokenType.ELSE,
-  while: TokenType.WHILE,
+  selama: TokenType.WHILE,
   fn: TokenType.FN,
   return: TokenType.RETURN,
   keluar: TokenType.PRINT,
