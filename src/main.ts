@@ -83,7 +83,7 @@ function main() {
       process.exit(1);
     }
   } else {
-    console.log("Tiny DSL REPL — type :help for help, :q to quit");
+    console.log("BawlangLang REPL — type :help for help, :q to quit");
     repl();
   }
 }
