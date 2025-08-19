@@ -41,12 +41,12 @@ enum TokenType {
 }
 
 const keywords: Record<string, TokenType> = {
-  let: TokenType.LET,
+  tetapkan: TokenType.LET,
   true: TokenType.TRUE,
   false: TokenType.FALSE,
   nil: TokenType.NIL,
-  if: TokenType.IF,
-  else: TokenType.ELSE,
+  jika: TokenType.IF,
+  selain: TokenType.ELSE,
   selama: TokenType.WHILE,
   fn: TokenType.FN,
   return: TokenType.RETURN,
