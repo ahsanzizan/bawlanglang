@@ -1,0 +1,19 @@
+{
+  "name": "building-a-dsl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc ./src/main.ts --outDir ./dist",
+    "start": "tsc ./src/main.ts --outDir ./dist && node ./dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/node": "^24.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}

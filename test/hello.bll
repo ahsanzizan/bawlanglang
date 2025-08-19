@@ -1,0 +1,6 @@
+let x = 10 + 12;
+
+keluar "Anjay mabar cuk cuk!";
+keluar x;
+
+if (x == 22) { keluar "true bos"; }
