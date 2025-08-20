@@ -5,7 +5,7 @@ import { NativeFunction } from "./callables/nativeFunction";
 import { UserFunction } from "./callables/userFunction";
 import { Environment } from "./environment";
 import { ReturnSignal } from "./returnSignal";
-import { assertUnreachable } from "../../util/assertUnreachable";
+import { assertUnreachable } from "@util/assertUnreachable";
 
 class Interpreter {
   globals = new Environment();

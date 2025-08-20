@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc ./src/main.ts --outDir ./dist",
-    "start": "tsc ./src/main.ts --outDir ./dist && node ./dist/main.js"
+    "build": "tsc -p ./tsconfig.json",
+    "start": "npm run build && node ./dist/main.js",
+    "typecheck": "tsc -p ./tsconfig.json --noEmit"
   },
   "keywords": [],
   "author": "",

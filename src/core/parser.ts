@@ -260,10 +260,10 @@ class Parser {
     return this.peek().type === TokenType.EOF;
   }
   private peek(): Token {
-    return this.tokens[this.current];
+    return this.tokens[this.current]!;
   }
   private previous(): Token {
-    return this.tokens[this.current - 1];
+    return this.tokens[this.current - 1]!;
   }
   private error(token: Token, message: string) {
     return new ParseError(

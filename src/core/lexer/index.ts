@@ -28,18 +28,21 @@ class Lexer {
     if (ch === "\n") {
       this.line++;
       this.col = 1;
-    } else this.col++;
-    return ch;
+    } else {
+      this.col++;
+    }
+
+    return ch ?? "\0";
   }
 
   private peek() {
-    return this.isAtEnd() ? "\0" : this.src[this.current];
+    return this.isAtEnd() ? "\0" : this.src[this.current] ?? "\0";
   }
 
   private peekNext() {
     return this.current + 1 >= this.src.length
       ? "\0"
-      : this.src[this.current + 1];
+      : this.src[this.current + 1]!;
   }
 
   private match(expected: string) {

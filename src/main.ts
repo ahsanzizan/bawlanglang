@@ -1,8 +1,8 @@
+import { Interpreter } from "@core/interpreter";
+import { Lexer } from "@core/lexer";
+import { Parser } from "@core/parser";
 import * as fs from "node:fs";
 import * as readline from "node:readline";
-import { Interpreter } from "./core/interpreter";
-import { Lexer } from "./core/lexer";
-import { Parser } from "./core/parser";
 
 function run(src: string, output: (s: string) => void = console.log) {
   const lexer = new Lexer(src);
