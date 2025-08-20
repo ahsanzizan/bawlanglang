@@ -4,9 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p ./tsconfig.json",
+    "build": "tsc -p ./tsconfig.json && tsc-alias -p ./tsconfig.json",
     "start": "npm run build && node ./dist/main.js",
     "typecheck": "tsc -p ./tsconfig.json --noEmit"
+  },
+  "bin": {
+    "bll": "dist/main.js"
+  },
+  "pkg": {
+    "assets": [
+      "README.md",
+      "test/**/*.bll"
+    ],
+    "targets": [
+      "node18-win-x64",
+      "node18-macos-x64",
+      "node18-linux-x64"
+    ],
+    "outputPath": "./bin"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +31,9 @@
     "@types/node": "^24.3.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
+  },
+  "devDependencies": {
+    "pkg": "^5.8.1",
+    "tsc-alias": "^1.8.16"
   }
 }

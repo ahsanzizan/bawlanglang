@@ -24,7 +24,7 @@ class Lexer {
   }
 
   private advance(): string {
-    const ch = this.src[this.current++];
+    const ch = this.src[this.current++] ?? "\0";
     if (ch === "\n") {
       this.line++;
       this.col = 1;
@@ -32,17 +32,17 @@ class Lexer {
       this.col++;
     }
 
-    return ch ?? "\0";
+    return ch;
   }
 
-  private peek() {
+  private peek(): string {
     return this.isAtEnd() ? "\0" : this.src[this.current] ?? "\0";
   }
 
-  private peekNext() {
+  private peekNext(): string {
     return this.current + 1 >= this.src.length
       ? "\0"
-      : this.src[this.current + 1]!;
+      : this.src[this.current + 1] ?? "\0";
   }
 
   private match(expected: string) {

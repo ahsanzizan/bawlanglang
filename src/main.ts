@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { Interpreter } from "@core/interpreter";
 import { Lexer } from "@core/lexer";
 import { Parser } from "@core/parser";

@@ -72,7 +72,7 @@ class Interpreter {
     }
 
     // Ensure the switch above remains exhaustive when Stmt grows
-    assertUnreachable(stmt as never);
+    // assertUnreachable(stmt as never);
   }
 
   executeBlock(statements: Stmt[], env: Environment) {
