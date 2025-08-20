@@ -1,5 +1,5 @@
 import { Stmt } from "../../ast";
-import { Interpreter } from "../../interpreter";
+import { Interpreter } from "..";
 import { Callable } from "../callable";
 import { Environment } from "../environment";
 import { ReturnSignal } from "../returnSignal";

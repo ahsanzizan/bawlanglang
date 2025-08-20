@@ -1,4 +1,4 @@
-import { Interpreter } from "../../interpreter";
+import { Interpreter } from "..";
 import { Callable } from "../callable";
 
 export class NativeFunction implements Callable {

@@ -7,6 +7,9 @@ class Lexer {
   private current = 0;
   private line = 1;
   private col = 1;
+  // Track the token start position for accurate diagnostics
+  private tokenLine = 1;
+  private tokenCol = 1;
   constructor(private readonly src: string) {}
 
   scanTokens(): Token[] {
@@ -48,7 +51,7 @@ class Lexer {
 
   private make(type: TokenType, literal: any = null, lexeme?: string) {
     const text = lexeme ?? this.src.slice(this.start, this.current);
-    return new Token(type, text, literal, this.line, this.col);
+    return new Token(type, text, literal, this.tokenLine, this.tokenCol);
   }
 
   private skipWhitespace() {
@@ -110,6 +113,9 @@ class Lexer {
   private scanToken(): Token {
     this.skipWhitespace();
     this.start = this.current; // token start
+    // Capture starting line/col for this token
+    this.tokenLine = this.line;
+    this.tokenCol = this.col;
     if (this.isAtEnd()) return this.make(TokenType.EOF);
     const c = this.advance();
     // single-char

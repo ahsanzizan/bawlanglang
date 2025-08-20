@@ -5,6 +5,7 @@ import { NativeFunction } from "./callables/nativeFunction";
 import { UserFunction } from "./callables/userFunction";
 import { Environment } from "./environment";
 import { ReturnSignal } from "./returnSignal";
+import { assertUnreachable } from "../../util/assertUnreachable";
 
 class Interpreter {
   globals = new Environment();
@@ -126,6 +127,8 @@ class Interpreter {
           );
         return fn.call(this, args);
     }
+    // Ensure the switch above remains exhaustive when Expr grows
+    return assertUnreachable(expr);
   }
 
   private binary(expr: Extract<Expr, { kind: "binary" }>) {

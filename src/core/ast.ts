@@ -21,3 +21,6 @@ type Stmt =
   | { kind: "return"; keyword: Token; value?: Expr };
 
 export { Expr, Stmt };
+
+// Utility type to enforce exhaustiveness in switches over Expr/Stmt
+export type Never = never;
