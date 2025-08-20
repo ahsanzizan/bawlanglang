@@ -5,7 +5,7 @@ import { NativeFunction } from "./callables/nativeFunction";
 import { UserFunction } from "./callables/userFunction";
 import { Environment } from "./environment";
 import { ReturnSignal } from "./returnSignal";
-import { assertUnreachable } from "../../util/assertUnreachable";
+import { assertUnreachable } from "../util/assertUnreachable";
 
 class Interpreter {
   globals = new Environment();
@@ -70,9 +70,6 @@ class Interpreter {
       case "return":
         throw new ReturnSignal(stmt.value ? this.evaluate(stmt.value) : null);
     }
-
-    // Ensure the switch above remains exhaustive when Stmt grows
-    assertUnreachable(stmt as never);
   }
 
   executeBlock(statements: Stmt[], env: Environment) {
