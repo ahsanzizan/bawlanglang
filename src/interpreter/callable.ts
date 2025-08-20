@@ -1,4 +1,4 @@
-import { Interpreter } from "../interpreter";
+import { Interpreter } from ".";
 
 export interface Callable {
   arity(): number;

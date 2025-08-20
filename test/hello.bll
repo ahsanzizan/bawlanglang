@@ -6,4 +6,6 @@ keluar x;
 jika (x == 22) { keluar "true bos"; }
 
 tetapkan i = 0;
-selama (i < 3) { keluar i; i = i + 1; }
+selama (i < 3) { 
+  keluar i; i = i + 1; 
+}
