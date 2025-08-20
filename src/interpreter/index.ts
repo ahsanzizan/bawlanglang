@@ -1,10 +1,10 @@
-import { Expr, Stmt } from "./ast";
-import { Callable } from "./interpreter/callable";
-import { NativeFunction } from "./interpreter/callables/nativeFunction";
-import { UserFunction } from "./interpreter/callables/userFunction";
-import { Environment } from "./interpreter/environment";
-import { ReturnSignal } from "./interpreter/returnSignal";
-import { Token, TokenType } from "./lexer";
+import { Expr, Stmt } from "../ast";
+import { Token, TokenType } from "../lexer";
+import { Callable } from "./callable";
+import { NativeFunction } from "./callables/nativeFunction";
+import { UserFunction } from "./callables/userFunction";
+import { Environment } from "./environment";
+import { ReturnSignal } from "./returnSignal";
 
 class Interpreter {
   globals = new Environment();
